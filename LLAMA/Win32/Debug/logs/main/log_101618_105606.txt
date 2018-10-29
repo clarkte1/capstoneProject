@@ -1,0 +1,52 @@
+[10:55:55] (ERROR) Load: Access violation at address 00C69529 in module 'Project1.exe'. Read of address 00000000
+[10:55:55] (GENERAL) Game: Using Skyrim
+[10:55:55] (GENERAL) Path: Using F:\Games\SteamLibrary\steamapps\common\Skyrim\Data\
+[10:55:55] (GENERAL) GameIni: Using F:\Users\Ovagi\Documents\My Games\Skyrim\Skyrim.ini
+[10:55:55] (GENERAL) Definitions: Using TES5Edit Definitions
+[10:55:55] (LOAD) Plugins: [Skyrim.esm] Loading file
+[10:55:55] (LOAD) Plugins: [Skyrim.esm] File loaded
+[10:55:55] (LOAD) Plugins: [Skyrim.esm] Start processing
+[10:55:55] (LOAD) Plugins: [Update.esm] Loading file
+[10:55:55] (LOAD) Plugins: [Update.esm] File loaded
+[10:55:55] (LOAD) Plugins: [Update.esm] Start processing
+[10:55:55] (LOAD) Plugins: [Dawnguard.esm] Loading file
+[10:55:55] (LOAD) Plugins: [Dawnguard.esm] File loaded
+[10:55:55] (LOAD) Plugins: [Dawnguard.esm] Start processing
+[10:55:55] (LOAD) Plugins: [HearthFires.esm] Loading file
+[10:55:55] (LOAD) Plugins: [HearthFires.esm] File loaded
+[10:55:55] (LOAD) Plugins: [HearthFires.esm] Start processing
+[10:55:55] (LOAD) Plugins: [Dragonborn.esm] Loading file
+[10:55:55] (LOAD) Plugins: [Dragonborn.esm] File loaded
+[10:55:55] (LOAD) Plugins: [Dragonborn.esm] Start processing
+[10:55:55] (LOAD) Plugins: [HighResTexturePack01.esp] Loading file
+[10:55:55] (LOAD) Plugins: [HighResTexturePack01.esp] File loaded
+[10:55:55] (LOAD) Plugins: [HighResTexturePack01.esp] Start processing
+[10:55:55] (LOAD) Plugins: [HighResTexturePack02.esp] Loading file
+[10:55:55] (LOAD) Plugins: [HighResTexturePack02.esp] File loaded
+[10:55:55] (LOAD) Plugins: [HighResTexturePack02.esp] Start processing
+[10:55:55] (LOAD) Plugins: [HighResTexturePack03.esp] Loading file
+[10:55:55] (LOAD) Plugins: [HighResTexturePack03.esp] File loaded
+[10:55:55] (LOAD) Plugins: [HighResTexturePack03.esp] Start processing
+[10:55:55] (General) Status: Test
+[10:55:57] (LOAD) Order: [00] Skyrim.esm
+[10:55:57] (LOAD) Order: [01] Update.esm
+[10:55:57] (LOAD) Order: [02] Dawnguard.esm
+[10:55:57] (LOAD) Order: [03] HearthFires.esm
+[10:55:57] (LOAD) Order: [04] Dragonborn.esm
+[10:55:57] (LOAD) Resources: Loading resources from Skyrim - Misc.bsa
+[10:55:57] (LOAD) Resources: Loading resources from Skyrim - Shaders.bsa
+[10:55:57] (LOAD) Resources: Loading resources from Skyrim - Textures.bsa
+[10:55:57] (LOAD) Resources: Loading resources from Skyrim - Interface.bsa
+[10:55:57] (LOAD) Resources: Loading resources from Skyrim - Animations.bsa
+[10:55:57] (LOAD) Resources: Loading resources from Skyrim - Meshes.bsa
+[10:55:57] (LOAD) Resources: Loading resources from Skyrim - Sounds.bsa
+[10:55:57] (LOAD) Resources: Loading resources from Skyrim - Voices.bsa
+[10:55:57] (LOAD) Resources: Loading resources from Skyrim - VoicesExtra.bsa
+[10:56:02] (PLUGIN) Tags: No tags found for Skyrim.esm
+[10:56:02] (PLUGIN) Tags: No tags found for Update.esm
+[10:56:02] (PLUGIN) Tags: No tags found for Dawnguard.esm
+[10:56:02] (PLUGIN) Tags: No tags found for HearthFires.esm
+[10:56:02] (PLUGIN) Tags: No tags found for Dragonborn.esm
+[10:56:02] (General) Status: Test
+[10:56:04] (LOAD) Plugins: Testing
+[10:56:05] (LOAD) Plugins: Testing

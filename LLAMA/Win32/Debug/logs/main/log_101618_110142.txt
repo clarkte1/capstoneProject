@@ -1,0 +1,30 @@
+[11:01:31] (ERROR) Load: Access violation at address 00C69529 in module 'Project1.exe'. Read of address 00000000
+[11:01:31] (GENERAL) Game: Using FalloutNV
+[11:01:31] (GENERAL) Path: Using F:\Games\SteamLibrary\steamapps\common\Fallout New Vegas\Data\
+[11:01:31] (GENERAL) GameIni: Using F:\Users\Ovagi\Documents\My Games\FalloutNV\Fallout.ini
+[11:01:31] (GENERAL) Definitions: Using FNVEdit Definitions
+[11:01:31] (LOAD) Plugins: [FalloutNV.esm] Loading file
+[11:01:31] (LOAD) Plugins: [FalloutNV.esm] File loaded
+[11:01:31] (LOAD) Plugins: [FalloutNV.esm] Start processing
+[11:01:31] (LOAD) Plugins: [ClassicPack.esm] Loading file
+[11:01:31] (LOAD) Plugins: [ClassicPack.esm] File loaded
+[11:01:31] (LOAD) Plugins: [ClassicPack.esm] Start processing
+[11:01:31] (LOAD) Plugins: [MercenaryPack.esm] Loading file
+[11:01:31] (LOAD) Plugins: [MercenaryPack.esm] File loaded
+[11:01:31] (LOAD) Plugins: [MercenaryPack.esm] Start processing
+[11:01:31] (LOAD) Plugins: [TribalPack.esm] Loading file
+[11:01:31] (LOAD) Plugins: [TribalPack.esm] File loaded
+[11:01:31] (LOAD) Plugins: [TribalPack.esm] Start processing
+[11:01:31] (LOAD) Plugins: [CaravanPack.esm] Loading file
+[11:01:31] (LOAD) Plugins: [CaravanPack.esm] File loaded
+[11:01:31] (LOAD) Plugins: [CaravanPack.esm] Start processing
+[11:01:31] (General) Status: Test
+[11:01:34] (LOAD) Order: [00] FalloutNV.esm
+[11:01:34] (LOAD) Resources: Loading resources from Fallout - Textures.bsa
+[11:01:34] (LOAD) Resources: Loading resources from Fallout - Textures2.bsa
+[11:01:34] (LOAD) Resources: Loading resources from Fallout - Meshes.bsa
+[11:01:34] (LOAD) Resources: Loading resources from Fallout - Voices1.bsa
+[11:01:34] (LOAD) Resources: Loading resources from Fallout - Sound.bsa
+[11:01:34] (LOAD) Resources: Loading resources from Fallout - Misc.bsa
+[11:01:38] (PLUGIN) Tags: No tags found for FalloutNV.esm
+[11:01:38] (General) Status: Test

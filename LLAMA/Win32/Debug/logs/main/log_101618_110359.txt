@@ -1,0 +1,46 @@
+[11:03:25] (ERROR) Load: Access violation at address 00C69529 in module 'Project1.exe'. Read of address 00000000
+[11:03:25] (GENERAL) Game: Using Fallout4
+[11:03:25] (GENERAL) Path: Using F:\Games\SteamLibrary\steamapps\common\Fallout 4\Data\
+[11:03:25] (GENERAL) GameIni: Using F:\Users\Ovagi\Documents\My Games\Fallout4\Fallout4.ini
+[11:03:25] (GENERAL) Definitions: Using FO4Edit Definitions
+[11:03:25] (LOAD) Plugins: [Fallout4.esm] Loading file
+[11:03:25] (LOAD) Plugins: [Fallout4.esm] File loaded
+[11:03:25] (LOAD) Plugins: [Fallout4.esm] Start processing
+[11:03:25] (LOAD) Plugins: [DLCRobot.esm] Loading file
+[11:03:25] (LOAD) Plugins: [DLCRobot.esm] File loaded
+[11:03:25] (LOAD) Plugins: [DLCRobot.esm] Start processing
+[11:03:25] (LOAD) Plugins: [DLCworkshop01.esm] Loading file
+[11:03:25] (LOAD) Plugins: [DLCworkshop01.esm] File loaded
+[11:03:25] (LOAD) Plugins: [DLCworkshop01.esm] Start processing
+[11:03:25] (LOAD) Plugins: [DLCCoast.esm] Loading file
+[11:03:25] (LOAD) Plugins: [DLCCoast.esm] File loaded
+[11:03:25] (LOAD) Plugins: [DLCCoast.esm] Start processing
+[11:03:25] (LOAD) Plugins: [DLCworkshop02.esm] Loading file
+[11:03:25] (LOAD) Plugins: [DLCworkshop02.esm] File loaded
+[11:03:25] (LOAD) Plugins: [DLCworkshop02.esm] Start processing
+[11:03:25] (LOAD) Plugins: [DLCworkshop03.esm] Loading file
+[11:03:25] (LOAD) Plugins: [DLCworkshop03.esm] File loaded
+[11:03:25] (LOAD) Plugins: [DLCworkshop03.esm] Start processing
+[11:03:25] (LOAD) Plugins: [DLCNukaWorld.esm] Loading file
+[11:03:25] (LOAD) Plugins: [DLCNukaWorld.esm] File loaded
+[11:03:25] (LOAD) Plugins: [DLCNukaWorld.esm] Start processing
+[11:03:25] (General) Status: Test
+[11:03:27] (LOAD) Order: [00] Fallout4.esm
+[11:03:27] (LOAD) Order: [01] DLCRobot.esm
+[11:03:27] (LOAD) Order: [02] DLCworkshop01.esm
+[11:03:27] (LOAD) Order: [03] DLCCoast.esm
+[11:03:27] (LOAD) Order: [04] DLCworkshop02.esm
+[11:03:27] (LOAD) Order: [05] DLCworkshop03.esm
+[11:03:27] (LOAD) Order: [06] DLCNukaWorld.esm
+[11:03:39] (PLUGIN) Tags: No tags found for Fallout4.esm
+[11:03:39] (PLUGIN) Tags: No tags found for DLCRobot.esm
+[11:03:39] (PLUGIN) Tags: No tags found for DLCworkshop01.esm
+[11:03:39] (PLUGIN) Tags: No tags found for DLCCoast.esm
+[11:03:39] (PLUGIN) Tags: No tags found for DLCworkshop02.esm
+[11:03:39] (PLUGIN) Tags: No tags found for DLCworkshop03.esm
+[11:03:39] (PLUGIN) Tags: No tags found for DLCNukaWorld.esm
+[11:03:39] (General) Status: Test
+[11:03:41] (LOAD) Plugins: I pushed a button
+[11:03:42] (LOAD) Plugins: I pushed a button
+[11:03:44] (LOAD) Plugins: I pushed a button
+[11:03:44] (LOAD) Plugins: I pushed a button

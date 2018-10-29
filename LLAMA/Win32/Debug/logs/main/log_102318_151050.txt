@@ -1,0 +1,39 @@
+[15:01:26] (ERROR) Load: Access violation at address 00C69529 in module 'Project1.exe'. Read of address 00000000
+[15:01:26] (GENERAL) Game: Using Skyrim
+[15:01:26] (GENERAL) Path: Using C:\games\Steam\steamapps\common\Skyrim Special Edition\Data\
+[15:01:26] (GENERAL) GameIni: Using C:\Users\Iamti\OneDrive\Documents\My Games\Skyrim Special Edition\Skyrim.ini
+[15:01:26] (GENERAL) Definitions: Using SSEEdit Definitions
+[15:01:26] (LOAD) Plugins: [Skyrim.esm] Loading file
+[15:01:26] (LOAD) Plugins: [Skyrim.esm] File loaded
+[15:01:26] (LOAD) Plugins: [Skyrim.esm] Start processing
+[15:01:26] (LOAD) Plugins: [Update.esm] Loading file
+[15:01:26] (LOAD) Plugins: [Update.esm] File loaded
+[15:01:26] (LOAD) Plugins: [Update.esm] Start processing
+[15:01:26] (LOAD) Plugins: [Dawnguard.esm] Loading file
+[15:01:26] (LOAD) Plugins: [Dawnguard.esm] File loaded
+[15:01:26] (LOAD) Plugins: [Dawnguard.esm] Start processing
+[15:01:26] (LOAD) Plugins: [HearthFires.esm] Loading file
+[15:01:26] (LOAD) Plugins: [HearthFires.esm] File loaded
+[15:01:26] (LOAD) Plugins: [HearthFires.esm] Start processing
+[15:01:26] (LOAD) Plugins: [Dragonborn.esm] Loading file
+[15:01:26] (LOAD) Plugins: [Dragonborn.esm] File loaded
+[15:01:26] (LOAD) Plugins: [Dragonborn.esm] Start processing
+[15:01:27] (General) Status: Test
+[15:01:28] (LOAD) Order: [00] Skyrim.esm
+[15:01:28] (LOAD) Order: [01] Update.esm
+[15:01:28] (LOAD) Order: [02] Dawnguard.esm
+[15:01:28] (LOAD) Order: [03] HearthFires.esm
+[15:01:28] (LOAD) Order: [04] Dragonborn.esm
+[15:01:34] (PLUGIN) Tags: No tags found for Skyrim.esm
+[15:01:34] (PLUGIN) Tags: No tags found for Update.esm
+[15:01:34] (PLUGIN) Tags: No tags found for Dawnguard.esm
+[15:01:34] (PLUGIN) Tags: No tags found for HearthFires.esm
+[15:01:34] (PLUGIN) Tags: No tags found for Dragonborn.esm
+[15:01:34] (General) Status: Test
+[15:10:46] (LOAD) Plugins: I pushed a button
+[15:10:46] (LOAD) Plugins: I pushed a button
+[15:10:47] (LOAD) Plugins: I pushed a button
+[15:10:47] (LOAD) Plugins: I pushed a button
+[15:10:47] (LOAD) Plugins: I pushed a button
+[15:10:48] (LOAD) Plugins: I pushed a button
+[15:10:48] (LOAD) Plugins: I pushed a button

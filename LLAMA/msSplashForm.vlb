@@ -1,0 +1,16 @@
+﻿[lblProgress]
+Coordinates=86,10,79,58
+Visible=True
+
+[lblTitle]
+Coordinates=10,78,52,58
+
+[lblAuthor]
+Coordinates=10,10,66,58
+
+[lblVersion]
+Coordinates=175,10,71,58
+
+[]
+Coordinates=161,78,91,36
+

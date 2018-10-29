@@ -1,0 +1,54 @@
+[11:05:31] (ERROR) Load: Access violation at address 00C69529 in module 'Project1.exe'. Read of address 00000000
+[11:05:31] (GENERAL) Game: Using Skyrim
+[11:05:31] (GENERAL) Path: Using C:\games\Steam\steamapps\common\Skyrim Special Edition\Data\
+[11:05:31] (GENERAL) GameIni: Using F:\Users\Ovagi\Documents\My Games\Skyrim Special Edition\Skyrim.ini
+[11:05:31] (GENERAL) Definitions: Using SSEEdit Definitions
+[11:05:31] (LOAD) Plugins: [Skyrim.esm] Loading file
+[11:05:31] (LOAD) Plugins: [Skyrim.esm] File loaded
+[11:05:31] (LOAD) Plugins: [Skyrim.esm] Start processing
+[11:05:31] (LOAD) Plugins: [Update.esm] Loading file
+[11:05:31] (LOAD) Plugins: [Update.esm] File loaded
+[11:05:31] (LOAD) Plugins: [Update.esm] Start processing
+[11:05:31] (LOAD) Plugins: [Dawnguard.esm] Loading file
+[11:05:31] (LOAD) Plugins: [Dawnguard.esm] File loaded
+[11:05:31] (LOAD) Plugins: [Dawnguard.esm] Start processing
+[11:05:31] (LOAD) Plugins: [HearthFires.esm] Loading file
+[11:05:31] (LOAD) Plugins: [HearthFires.esm] File loaded
+[11:05:31] (LOAD) Plugins: [HearthFires.esm] Start processing
+[11:05:31] (LOAD) Plugins: [Dragonborn.esm] Loading file
+[11:05:31] (LOAD) Plugins: [Dragonborn.esm] File loaded
+[11:05:31] (LOAD) Plugins: [Dragonborn.esm] Start processing
+[11:05:31] (General) Status: Test
+[11:05:33] (LOAD) Order: [00] Skyrim.esm
+[11:05:33] (LOAD) Order: [01] Update.esm
+[11:05:33] (LOAD) Order: [02] Dawnguard.esm
+[11:05:33] (LOAD) Order: [03] HearthFires.esm
+[11:05:33] (LOAD) Order: [04] Dragonborn.esm
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Misc.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Shaders.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Interface.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Animations.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Meshes0.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Meshes1.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Sounds.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Voices_en0.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Textures0.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Textures1.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Textures2.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Textures3.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Textures4.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Textures5.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Textures6.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Textures7.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Textures8.bsa
+[11:05:33] (LOAD) Resources: Loading resources from Skyrim - Patch.bsa
+[11:05:38] (PLUGIN) Tags: No tags found for Skyrim.esm
+[11:05:38] (PLUGIN) Tags: No tags found for Update.esm
+[11:05:38] (PLUGIN) Tags: No tags found for Dawnguard.esm
+[11:05:38] (PLUGIN) Tags: No tags found for HearthFires.esm
+[11:05:38] (PLUGIN) Tags: No tags found for Dragonborn.esm
+[11:05:38] (General) Status: Test
+[11:05:43] (LOAD) Plugins: I pushed a button
+[11:05:44] (LOAD) Plugins: I pushed a button
+[11:05:45] (LOAD) Plugins: I pushed a button
+[11:05:45] (LOAD) Plugins: I pushed a button

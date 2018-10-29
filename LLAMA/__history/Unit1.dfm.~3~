@@ -1,0 +1,60 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 467
+  ClientWidth = 738
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Button1: TButton
+    Left = 8
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object ListBox1: TListBox
+    Left = 8
+    Top = 39
+    Width = 75
+    Height = 410
+    ItemHeight = 13
+    TabOrder = 1
+  end
+  object PageController: TPageControl
+    Left = 89
+    Top = 15
+    Width = 641
+    Height = 434
+    ActivePage = ArmorSheet
+    TabOrder = 2
+    object ArmorSheet: TTabSheet
+      Caption = 'ArmorSheet'
+      ExplicitLeft = 12
+      ExplicitTop = 40
+      ExplicitWidth = 281
+      ExplicitHeight = 165
+    end
+    object WeaponSheet: TTabSheet
+      Caption = 'Weapons'
+      ImageIndex = 1
+      ExplicitWidth = 281
+      ExplicitHeight = 165
+    end
+    object SetsSheet: TTabSheet
+      Caption = 'Weapon and Armor Sets'
+      ImageIndex = 2
+      ExplicitWidth = 281
+      ExplicitHeight = 165
+    end
+  end
+end

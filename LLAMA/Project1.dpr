@@ -1,0 +1,159 @@
+program Project1;
+
+{$R *.dres}
+
+uses
+  Forms,
+  Dialogs,
+  Controls,
+  SysUtils,
+  Unit1 in 'Unit1.pas' {Form1},
+  dzlib in 'mod-dump-master\lib\Imaging\ZLib\dzlib.pas',
+  imadler in 'mod-dump-master\lib\Imaging\ZLib\imadler.pas',
+  iminfblock in 'mod-dump-master\lib\Imaging\ZLib\iminfblock.pas',
+  iminfcodes in 'mod-dump-master\lib\Imaging\ZLib\iminfcodes.pas',
+  iminffast in 'mod-dump-master\lib\Imaging\ZLib\iminffast.pas',
+  iminftrees in 'mod-dump-master\lib\Imaging\ZLib\iminftrees.pas',
+  iminfutil in 'mod-dump-master\lib\Imaging\ZLib\iminfutil.pas',
+  impaszlib in 'mod-dump-master\lib\Imaging\ZLib\impaszlib.pas',
+  imtrees in 'mod-dump-master\lib\Imaging\ZLib\imtrees.pas',
+  imzdeflate in 'mod-dump-master\lib\Imaging\ZLib\imzdeflate.pas',
+  imzinflate in 'mod-dump-master\lib\Imaging\ZLib\imzinflate.pas',
+  imzutil in 'mod-dump-master\lib\Imaging\ZLib\imzutil.pas',
+  CRC32 in 'mod-dump-master\lib\mte\CRC32.pas',
+  mteBase in 'mod-dump-master\lib\mte\mteBase.pas',
+  mteChangeLogForm in 'mod-dump-master\lib\mte\mteChangeLogForm.pas' {ChangeLogForm},
+  mteConflict in 'mod-dump-master\lib\mte\mteConflict.pas',
+  mteHelpers in 'mod-dump-master\lib\mte\mteHelpers.pas',
+  mteLogger in 'mod-dump-master\lib\mte\mteLogger.pas',
+  mteLogging in 'mod-dump-master\lib\mte\mteLogging.pas',
+  mtePluginSelectionForm in 'mod-dump-master\lib\mte\mtePluginSelectionForm.pas' {PluginSelectionForm},
+  mteProgressForm in 'mod-dump-master\lib\mte\mteProgressForm.pas' {ProgressForm},
+  mteTaskHandler in 'mod-dump-master\lib\mte\mteTaskHandler.pas',
+  mteTracker in 'mod-dump-master\lib\mte\mteTracker.pas',
+  RttiIni in 'mod-dump-master\lib\mte\RttiIni.pas',
+  RttiJson in 'mod-dump-master\lib\mte\RttiJson.pas',
+  RttiTranslation in 'mod-dump-master\lib\mte\RttiTranslation.pas',
+  W7Taskbar in 'mod-dump-master\lib\mte\W7Taskbar.pas',
+  superobject in 'mod-dump-master\lib\superobject\superobject.pas',
+  lz4 in 'mod-dump-master\lib\xedit\lz4\lz4.pas',
+  lz4Common in 'mod-dump-master\lib\xedit\lz4\lz4Common.pas',
+  lz4frame in 'mod-dump-master\lib\xedit\lz4\lz4frame.pas',
+  lz4frame_static in 'mod-dump-master\lib\xedit\lz4\lz4frame_static.pas',
+  lz4HC in 'mod-dump-master\lib\xedit\lz4\lz4HC.pas',
+  lz4io in 'mod-dump-master\lib\xedit\lz4\lz4io.pas',
+  xxHash in 'mod-dump-master\lib\xedit\lz4\xxHash.pas',
+  zlibex in 'mod-dump-master\lib\xedit\zlib\zlibex.pas',
+  ZLibExApi in 'mod-dump-master\lib\xedit\zlib\ZLibExApi.pas',
+  wbBSA in 'mod-dump-master\lib\xedit\wbBSA.pas',
+  wbDefinitionsFNV in 'mod-dump-master\lib\xedit\wbDefinitionsFNV.pas',
+  wbDefinitionsFO3 in 'mod-dump-master\lib\xedit\wbDefinitionsFO3.pas',
+  wbDefinitionsFO4 in 'mod-dump-master\lib\xedit\wbDefinitionsFO4.pas',
+  wbDefinitionsTES3 in 'mod-dump-master\lib\xedit\wbDefinitionsTES3.pas',
+  wbDefinitionsTES4 in 'mod-dump-master\lib\xedit\wbDefinitionsTES4.pas',
+  wbDefinitionsTES5 in 'mod-dump-master\lib\xedit\wbDefinitionsTES5.pas',
+  wbHelpers in 'mod-dump-master\lib\xedit\wbHelpers.pas',
+  wbImplementation in 'mod-dump-master\lib\xedit\wbImplementation.pas',
+  wbInterface in 'mod-dump-master\lib\xedit\wbInterface.pas',
+  wbLocalization in 'mod-dump-master\lib\xedit\wbLocalization.pas',
+  wbSort in 'mod-dump-master\lib\xedit\wbSort.pas',
+  wbStreams in 'mod-dump-master\lib\xedit\wbStreams.pas',
+  msAlgorithm in 'msAlgorithm.pas',
+  msChoicePanel in 'msChoicePanel.pas',
+  msConfiguration in 'msConfiguration.pas',
+  msConflict in 'msConflict.pas',
+  msConflictForm in 'msConflictForm.pas' {ConflictForm},
+  msCore in 'msCore.pas',
+  msEditForm in 'msEditForm.pas' {EditForm},
+  msLoader in 'msLoader.pas',
+  msOptionsForm in 'msOptionsForm.pas' {OptionsForm},
+  msPluginSelectionForm in 'msPluginSelectionForm.pas' {MiniPluginSelectionForm},
+  msPriorityForm in 'msPriorityForm.pas' {PriorityForm},
+  msProfileForm in 'msProfileForm.pas' {ProfileForm},
+  msProfilePanel in 'msProfilePanel.pas',
+  msSettingsManager in 'msSettingsManager.pas' {SettingsManager},
+  msSmash in 'msSmash.pas',
+  msSmashForm in 'msSmashForm.pas' {SmashForm},
+  msSplashForm in 'msSplashForm.pas' {SplashForm},
+  msTagHelper in 'msTagHelper.pas' {TagHelper},
+  msTagManager in 'msTagManager.pas' {TagManager},
+  msThreads in 'msThreads.pas',
+  Imaging in 'mod-dump-master\lib\Imaging\Imaging.pas',
+  ImagingBitmap in 'mod-dump-master\lib\Imaging\ImagingBitmap.pas',
+  ImagingCanvases in 'mod-dump-master\lib\Imaging\ImagingCanvases.pas',
+  ImagingClasses in 'mod-dump-master\lib\Imaging\ImagingClasses.pas',
+  ImagingColors in 'mod-dump-master\lib\Imaging\ImagingColors.pas',
+  ImagingComponents in 'mod-dump-master\lib\Imaging\ImagingComponents.pas',
+  ImagingDds in 'mod-dump-master\lib\Imaging\ImagingDds.pas',
+  ImagingFormats in 'mod-dump-master\lib\Imaging\ImagingFormats.pas',
+  ImagingIO in 'mod-dump-master\lib\Imaging\ImagingIO.pas',
+  ImagingNetworkGraphics in 'mod-dump-master\lib\Imaging\ImagingNetworkGraphics.pas',
+  ImagingTarga in 'mod-dump-master\lib\Imaging\ImagingTarga.pas',
+  ImagingTypes in 'mod-dump-master\lib\Imaging\ImagingTypes.pas',
+  ImagingUtility in 'mod-dump-master\lib\Imaging\ImagingUtility.pas';
+
+{$R *.res}
+
+const
+  IMAGE_FILE_LARGE_ADDRESS_AWARE = $0020;
+
+
+{$SetPEFlags IMAGE_FILE_LARGE_ADDRESS_AWARE}
+
+var
+  bProfileProvided: boolean;
+  sParam, sProfile, sPath: string;
+  i: Integer;
+  aSettings: TSettings;
+
+begin
+  // set important vars
+  SysUtils.FormatSettings.DecimalSeparator := '.';
+  Application.HintHidePause := 8000;
+  //ReportMemoryLeaksOnShutdown := true;
+  PathList.Values['ProgramPath'] := ExtractFilePath(ParamStr(0));
+
+  // get current profile if profile switch provided
+  for i := 1 to ParamCount do begin
+    sParam := ParamStr(i);
+    if sParam = '-profile' then
+      sProfile := ParamStr(i + 1);
+  end;
+  bProfileProvided := sProfile <> '';
+  sPath := Format('%sprofiles\%s\settings.ini', [ProgramPath, sProfile]);
+  if bProfileProvided and FileExists(sPath) then begin
+    aSettings := TSettings.Create;
+    TRttiIni.Load(sPath, aSettings);
+    CurrentProfile := TProfile.Create(aSettings.profile);
+    CurrentProfile.gameMode := aSettings.gameMode;
+    CurrentProfile.gamePath := aSettings.gamePath;
+    aSettings.Free;
+  end;
+
+  // initialize application
+  Application.Initialize;
+  ForceDirectories(PathList.Values['ProgramPath'] + 'profiles');
+  LoadSettings;
+  LoadStatistics;
+
+  // have user select game mode
+  if not bProfileProvided then begin
+    ProfileForm := TProfileForm.Create(nil);
+    if not (ProfileForm.ShowModal = mrOk) then
+      exit;
+    ProfileForm.Free;
+  end;
+
+  // run main application
+  Application.Title := 'Mator Smash';
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TProfileForm, ProfileForm);
+  Application.CreateForm(TOptionsForm, OptionsForm);
+  Application.CreateForm(TEditForm, EditForm);
+  Application.CreateForm(TSettingsManager, SettingsManager);
+  Application.CreateForm(TMiniPluginSelectionForm, MiniPluginSelectionForm);
+  Application.CreateForm(TConflictForm, ConflictForm);
+  Application.CreateForm(TTagManager, TagManager);
+  Application.CreateForm(TTagHelper, TagHelper);
+  Application.Run;
+end.

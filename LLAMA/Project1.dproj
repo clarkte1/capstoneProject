@@ -1,0 +1,2535 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E6AD6714-2200-4E45-80A2-50C751CDCB94}</ProjectGuid>
+        <ProjectVersion>18.4</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <MainSource>Project1.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_UsePackage>RESTComponents;FireDAC;FireDACSqliteDriver;soaprtl;FireDACIBDriver;soapmidas;FireDACCommon;RESTBackendComponents;soapserver;CloudService;FireDACCommonDriver;inet;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <SanitizedProjectName>Project1</SanitizedProjectName>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;IndyIPCommon;bindcompdbx;DBXInterBaseDriver;vcl;IndyIPServer;vclactnband;vclFireDAC;IndySystem;tethering;svnui;dsnapcon;FireDACADSDriver;FireDACMSAccDriver;fmxFireDAC;vclimg;vcltouch;vcldb;bindcompfmx;svn;FireDACPgDriver;inetdb;DbxCommonDriver;fmx;fmxdae;xmlrtl;fmxobj;vclwinx;rtl;DbxClientDriver;CustomIPTransport;vcldsnap;dbexpress;IndyCore;vclx;bindcomp;appanalytics;dsnap;IndyIPClient;bindcompvcl;VCLRESTComponents;dbxcds;VclSmp;adortl;vclie;bindengine;DBXMySQLDriver;dsnapxml;FireDACMySQLDriver;dbrtl;IndyProtocols;inetdbxpress;FireDACCommonODBC;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;IndyIPCommon;bindcompdbx;DBXInterBaseDriver;vcl;IndyIPServer;vclactnband;vclFireDAC;IndySystem;tethering;dsnapcon;FireDACADSDriver;FireDACMSAccDriver;fmxFireDAC;vclimg;vcltouch;vcldb;bindcompfmx;FireDACPgDriver;inetdb;DbxCommonDriver;fmx;fmxdae;xmlrtl;fmxobj;vclwinx;rtl;DbxClientDriver;CustomIPTransport;vcldsnap;dbexpress;IndyCore;vclx;bindcomp;appanalytics;dsnap;IndyIPClient;bindcompvcl;VCLRESTComponents;dbxcds;VclSmp;adortl;vclie;bindengine;DBXMySQLDriver;dsnapxml;FireDACMySQLDriver;dbrtl;IndyProtocols;inetdbxpress;FireDACCommonODBC;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+        <DCC_UnitSearchPath>C:\Users\Iamti\OneDrive\Documents\LLAMA;F:\Users\Ovagi\Documents\School\CAP\LLAMA;C:\Users\Ovagi\OneDrive\Documents\LLAMA\mod-dump-master\lib\Imaging;C:\Users\Iamti\OneDrive\Documents\LLAMA\mod-dump-master\lib\Imaging;C:\Users\Iamti\OneDrive\Documents\lib\lz4-delphi-master;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="Unit1.pas">
+            <Form>Form1</Form>
+        </DCCReference>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\dzlib.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\imadler.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\iminfblock.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\iminfcodes.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\iminffast.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\iminftrees.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\iminfutil.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\impaszlib.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\imtrees.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\imzdeflate.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\imzinflate.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ZLib\imzutil.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\CRC32.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\mteBase.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\mteChangeLogForm.pas">
+            <Form>ChangeLogForm</Form>
+        </DCCReference>
+        <DCCReference Include="mod-dump-master\lib\mte\mteConflict.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\mteHelpers.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\mteLogger.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\mteLogging.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\mtePluginSelectionForm.pas">
+            <Form>PluginSelectionForm</Form>
+        </DCCReference>
+        <DCCReference Include="mod-dump-master\lib\mte\mteProgressForm.pas">
+            <Form>ProgressForm</Form>
+        </DCCReference>
+        <DCCReference Include="mod-dump-master\lib\mte\mteTaskHandler.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\mteTracker.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\RttiIni.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\RttiJson.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\RttiTranslation.pas"/>
+        <DCCReference Include="mod-dump-master\lib\mte\W7Taskbar.pas"/>
+        <DCCReference Include="mod-dump-master\lib\superobject\superobject.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\lz4\lz4.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\lz4\lz4Common.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\lz4\lz4frame.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\lz4\lz4frame_static.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\lz4\lz4HC.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\lz4\lz4io.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\lz4\xxHash.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\zlib\zlibex.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\zlib\ZLibExApi.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbBSA.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbDefinitionsFNV.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbDefinitionsFO3.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbDefinitionsFO4.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbDefinitionsTES3.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbDefinitionsTES4.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbDefinitionsTES5.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbHelpers.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbImplementation.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbInterface.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbLocalization.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbSort.pas"/>
+        <DCCReference Include="mod-dump-master\lib\xedit\wbStreams.pas"/>
+        <DCCReference Include="msAlgorithm.pas"/>
+        <DCCReference Include="msChoicePanel.pas"/>
+        <DCCReference Include="msConfiguration.pas"/>
+        <DCCReference Include="msConflict.pas"/>
+        <DCCReference Include="msConflictForm.pas">
+            <Form>ConflictForm</Form>
+        </DCCReference>
+        <DCCReference Include="msCore.pas"/>
+        <DCCReference Include="msEditForm.pas">
+            <Form>EditForm</Form>
+        </DCCReference>
+        <DCCReference Include="msLoader.pas"/>
+        <DCCReference Include="msOptionsForm.pas">
+            <Form>OptionsForm</Form>
+        </DCCReference>
+        <DCCReference Include="msPluginSelectionForm.pas">
+            <Form>MiniPluginSelectionForm</Form>
+        </DCCReference>
+        <DCCReference Include="msPriorityForm.pas">
+            <Form>PriorityForm</Form>
+        </DCCReference>
+        <DCCReference Include="msProfileForm.pas">
+            <Form>ProfileForm</Form>
+        </DCCReference>
+        <DCCReference Include="msProfilePanel.pas"/>
+        <DCCReference Include="msSettingsManager.pas">
+            <Form>SettingsManager</Form>
+        </DCCReference>
+        <DCCReference Include="msSmash.pas"/>
+        <DCCReference Include="msSmashForm.pas">
+            <Form>SmashForm</Form>
+        </DCCReference>
+        <DCCReference Include="msSplashForm.pas">
+            <Form>SplashForm</Form>
+        </DCCReference>
+        <DCCReference Include="msTagHelper.pas">
+            <Form>TagHelper</Form>
+        </DCCReference>
+        <DCCReference Include="msTagManager.pas">
+            <Form>TagManager</Form>
+        </DCCReference>
+        <DCCReference Include="msThreads.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\Imaging.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingBitmap.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingCanvases.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingClasses.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingColors.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingComponents.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingDds.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingFormats.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingIO.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingNetworkGraphics.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingTarga.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingTypes.pas"/>
+        <DCCReference Include="mod-dump-master\lib\Imaging\ImagingUtility.pas"/>
+        <RcCompile Include="smash.rc">
+            <Form>smash.res</Form>
+        </RcCompile>
+        <None Include="mod-dump-master"/>
+        <None Include="..\LLAMA"/>
+        <None Include="mod-dump-master\lib\Imaging\ImagingOptions.inc"/>
+        <RcItem Include="Resources\add.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_1</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\add-disabled.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_2</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\add-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_3</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\archive.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_4</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\browse.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_5</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\build.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_6</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\Check.bmp">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>Bitmap_1</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\connected.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_7</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\dictionary.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_8</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\dictionary-disabled.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_9</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\dictionary-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_10</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\disallow.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_11</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\disconnected.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_12</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\download.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_13</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\faces.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_14</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\fallout 4 96.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_15</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\fallout new vegas96.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_16</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\fallout96.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_17</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\find.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_18</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\find-disabled.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_19</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\find-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_20</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\force.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_21</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\fragments.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_22</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\gear.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_23</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\gear-disabled.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_24</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\gear-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_25</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\go.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_26</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\go-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_27</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\help.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_28</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\help-disabled.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_29</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\help-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_30</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\help-double-2.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_31</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\hourglass.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_32</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\ignore.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_33</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\link.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_34</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\loop.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_35</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\manage.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_36</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\manage-disabled.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_37</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\manage-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_38</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\menu.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_39</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\no_errors.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_40</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\oblivion96.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_41</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\oDeletions.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_42</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\paperclip.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_43</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\PartialCheck.bmp">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>Bitmap_2</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\pDeletions.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_44</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\rebuild.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_45</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\rebuild-disabled.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_46</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\rebuild-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_47</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\red hulk big.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>JpgImage_1</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\red hulk full.jpg">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>JpgImage_2</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\redx.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_48</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\report.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_49</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\report-disabled.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_50</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\report-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_51</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\singleEntity.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_52</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\skyrim96.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_53</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\skyrimse96.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_54</ResourceId>
+        </RcItem>
+        <None Include="Resources\smash.mp3"/>
+        <RcItem Include="Resources\smash.png">
+            <ResourceType>RCDATA</ResourceType>
+            <ResourceId>PngImage_1</ResourceId>
+        </RcItem>
+        <None Include="Resources\smash.wav"/>
+        <RcItem Include="Resources\smash-icon.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_55</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\UnCheck.bmp">
+            <ResourceType>BITMAP</ResourceType>
+            <ResourceId>Bitmap_3</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\update.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_56</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\update-disabled.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_57</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\update-double.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_58</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\updateProgram.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_59</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\voice5.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_60</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\warning.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_61</ResourceId>
+        </RcItem>
+        <RcItem Include="Resources\x.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_62</ResourceId>
+        </RcItem>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Application</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">Project1.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k250.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp250.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment Version="3">
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assest\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\fallout new vegas96.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\license.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\rebuild-disabled.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxmss.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32\libgds.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\intl\gdsintl.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\intl\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqladapter.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\x.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\browse.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxora.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libmidas.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\oss_license_notice.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\find-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxase.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxdb2.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\help-disabled.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\license.txt" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\admin.ib" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxmys.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxasa.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\rebuild.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\oss_license_notice.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\ibconfig" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\libibtogo.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlib.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64\ibclient64.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxasa.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\help-double-2.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\no_errors.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\rebuild-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\add-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxdb2.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assest\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxdb2.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlfb.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\ibconfig" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\faces.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\libibtogo.dylib" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxinf.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\smash.png" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\midas.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\fallout 4 96.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\license.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqladapter.dylib" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxmss.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\admin.ib" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\libibtogo.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\admin.ib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\ibconfig" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxadapter.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\fragments.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\skyrimse96.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\build.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\license.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\oss_license_notice.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqladapter.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\add-disabled.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\force.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\download.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\add.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\ibtogo.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\manage-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\report.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\smash-icon.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\connected.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\loop.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\admin.ib" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\oss_license_notice.txt" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\oss_license_notice.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\ignore.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\report-disabled.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\license.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\singleEntity.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\oss_license_notice.txt" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\license.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlmys.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxase.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\oss_license_notice.txt" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlora.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxase.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assest\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(Platform)\$(Configuration)\AppxManifest.xml" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\PartialCheck.bmp" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxmss.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlora.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\ADMIN.IB" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\iossimulator\libmidas.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\gear-disabled.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxdb2.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\find.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\red hulk big.jpg" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(Platform)\$(Configuration)\AppxManifest.xml" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\hourglass.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\find-disabled.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\dictionary-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32\gds32.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\ibconfig" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxadapter.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libmidas.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\help.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\link.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(Platform)\$(Configuration)\AppxManifest.xml" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\oss_license_notice.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\smash.mp3" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\ibconfig" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\admin.ib" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxora.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxmss9.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\ibconfig" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\license.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\report-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\license.txt" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxmys.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\pDeletions.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\update-disabled.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlib.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assest\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\gear-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\license.txt" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxora.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\disallow.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\ibconfig" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\intl\gdsintl.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\intl\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\oss_license_notice.txt" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxfb.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\oss_license_notice.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\ADMIN.IB" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxmys.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\oblivion96.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxinf.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxase.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\UnCheck.bmp" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assest\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxmss9.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\update.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxmys.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\ADMIN.IB" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\admin.ib" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\LLAMA" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\license.txt" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlinf.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\oDeletions.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlasa.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\midas.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlasa.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxint.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\red hulk full.jpg" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\admin.ib" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\iossimulator\libsqlib.dylib" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlinf.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\dictionary.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\ibtogo64.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxora.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxmss.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\gear.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\ibtogo64.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxinf.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\help-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxfb.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\ibconfig" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxfb.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxmss9.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(Platform)\$(Configuration)\AppxManifest.xml" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlfb.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\license.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxinf.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\fallout96.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\iossimulator\libmidas.dylib" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\dictionary-disabled.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqlmys.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\iossimulator\libsqlib.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="mod-dump-master\lib\Imaging\ImagingOptions.inc" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\ibconfig" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\license.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32\gds32.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libsqladapter.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\intl\gdsintl" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\intl\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxadapter.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\Check.bmp" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxint.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\intl\gdsintl.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\intl\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\ibtogo.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\admin.ib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win32\Debug\Project1.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>Project1.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\oss_license_notice.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\libibtogo.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\skyrim96.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\interbase.msg" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\ADMIN.IB" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxint.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assest\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\license.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\manage-disabled.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxasa.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\license.txt" Configuration="Release" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxint.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\ibconfig" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\menu.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64_togo\interbase\oss_license_notice.txt" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\updateProgram.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxasa.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\paperclip.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\midas.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\warning.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\archive.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_sim\interbase\oss_license_notice.txt" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxadapter.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32_togo\interbase\intl\gdsintl" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\interbase\intl\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\dbxfb.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32_togo\interbase\intl\gdsintl.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\intl\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\redx.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win32\interbase.msg" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios_device\interbase\oss_license_notice.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\ios64_device\interbase\admin.ib" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>StartUp\Documents\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\midas.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\osx32\libgds.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\dbxmss9.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\win64\ibclient64.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteDir>StartUp\Documents\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assest\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\manage.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\go-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="mod-dump-master" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\smash.wav" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_iblite.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\disconnected.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\reg_ibtogo.txt" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\license\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\go.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\update-double.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assest\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Resources\voice5.ico" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(IBREDISTDIR)\android\interbase\admin.ib" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal\interbase\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

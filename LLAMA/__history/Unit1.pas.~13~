@@ -26,7 +26,7 @@ uses
   msCore, msConfiguration, msLoader, msThreads, msOptionsForm,
   msEditForm, msSettingsManager, msTagManager, msSplashForm,
   // tes5edit units
-  wbBSA, wbHelpers, wbInterface, wbImplementation, System.ImageList, Vcl.DBGrids;
+  wbBSA, wbHelpers, wbInterface, wbImplementation, System.ImageList;
 
 type
   TForm1 = class(TForm)
@@ -39,7 +39,6 @@ type
     StatusPage: TTabSheet;
     LogListView: TListView;
     StatusPanelMessage: TPanel;
-    DBGirdArmors: TDBGrid;
     procedure FormCreate(Sender: TObject);
     procedure LoaderStatus(s: string);
     procedure LogMessage(const group, &label, text: string);
@@ -51,8 +50,6 @@ type
     procedure LogListViewData(Sender: TObject; Item: TListItem);
     procedure LogListViewDrawItem(Sender: TCustomListView; Item: TListItem; Rect: TRect; State: TOwnerDrawState);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure ListBoxPluginsClick(Sender: TObject);
-    procedure DisplayRecordLeveledListRecords(SelectedPlugin: TPlugin);
   private
     { Private declarations }
   public
@@ -125,37 +122,6 @@ begin
   Logger.Write(xEditLogGroup, xEditLogLabel, s);
 end;
 
-procedure TForm1.ListBoxPluginsClick(Sender: TObject);
-var plugin : TPlugin;
-var SelectedPlugin: string;
-begin
-  if ListBoxPlugins.ItemIndex = -1 then
-    Exit;
-  SelectedPlugin := ListBoxPlugins.Items[ListBoxPlugins.ItemIndex];
-
-  for plugin in PluginsList do
-    if(plugin._File.Name = SelectedPlugin) then
-      Logger.Write(xEditLogGroup, xEditLogLabel, SelectedPlugin);
-      DisplayRecordLeveledListRecords(plugin);
-
-
-
-end;
-
-procedure TForm1.DisplayRecordLeveledListRecords(SelectedPlugin: TPlugin);
-var
-  LeveledItem: IwbRecord;
-  LeveledItemList: TList;
-  I : Integer;
-begin
-  for I := 0 to SelectedPlugin._File.RecordCount do
-  begin
-    LeveledItem := SelectedPlugin._File.Records[i];
-    if (LeveledItem <> nil) and (LeveledItem.Signature = 'LVLI') then
-      Logger.Write(xEditLogGroup, xEditLogLabel, LeveledItem.ElementCount.ToString);
-  end;
-end;
-
 procedure TForm1.LoaderStatus(s: string);
 begin
   StatusPanelMessage.Caption := s;
@@ -169,6 +135,12 @@ var
 
 begin
   Logger.Write(xEditLogGroup, xEditLogLabel, 'I pushed a button');
+
+  for item in PluginsList do
+    for I := 0 to item._File.RecordCount do
+      Logger.Write(xEditLogGroup, xEditLogLabel, item._File.Records[i].DisplayNameKey)
+
+
 end;
 
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);

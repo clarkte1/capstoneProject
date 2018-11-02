@@ -32,30 +32,33 @@ object Form1: TForm1
     Height = 410
     ItemHeight = 13
     TabOrder = 1
-    OnClick = ListBoxPluginsClick
   end
   object PageController: TPageControl
     Left = 119
     Top = 8
     Width = 692
     Height = 434
-    ActivePage = ArmorSheet
+    ActivePage = StatusPage
     TabOrder = 2
     OnChange = PageControllerChange
     object ArmorSheet: TTabSheet
       Caption = 'ArmorSheet'
+      ExplicitWidth = 633
     end
     object WeaponSheet: TTabSheet
       Caption = 'Weapons'
       ImageIndex = 1
+      ExplicitWidth = 633
     end
     object SetsSheet: TTabSheet
       Caption = 'Weapon and Armor Sets'
       ImageIndex = 2
+      ExplicitWidth = 633
     end
     object StatusPage: TTabSheet
       Caption = 'StatusPage'
       ImageIndex = 3
+      ExplicitHeight = 409
       object LogListView: TListView
         Left = 3
         Top = 3
@@ -73,17 +76,5 @@ object Form1: TForm1
         TabOrder = 1
       end
     end
-  end
-  object DBGirdArmors: TDBGrid
-    Left = 136
-    Top = 39
-    Width = 657
-    Height = 386
-    TabOrder = 3
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
   end
 end

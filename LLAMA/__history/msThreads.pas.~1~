@@ -65,7 +65,6 @@ var
   i: integer;
   plugin: TPlugin;
   aFile: IwbFile;
-  OnlyLoad : boolean;
 begin
   try
     // PRINT LOAD ORDER TO LOG
@@ -113,12 +112,6 @@ begin
     TPatchHelpers.AssignPatchesToPlugins;
     LoadPluginInfo;
     LoadSettingTags;
-
-    for plugin in PluginsList do
-      begin
-        plugin._File.BuildRef();
-      end;
-
 
     // CLEAN UP
     slPlugins.Free;

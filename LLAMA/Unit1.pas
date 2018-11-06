@@ -136,12 +136,14 @@ begin
     Exit;
   SelectedPlugin := ListBoxPlugins.Items[ListBoxPlugins.ItemIndex];
 
+  for I := 0 to ArmorGrid.ColCount - 1 do
+    ArmorGrid.Cols[I].Clear;
+
   ArmorGrid.Cols[0].Text := 'Editor ID';
   ArmorGrid.Cols[1].Text := 'Display Name';
   ArmorGrid.Cols[2].Text := 'Armor Rating';
+  ArmorGrid.Cols[3].Text := 'HELLO HELLO';
 
-  for I := 0 to ArmorGrid.ColCount - 1 do
-    ArmorGrid.Cols[I].Clear;
   ArmorGrid.RowCount := 1;
 
   WeaponGrid.Cols[0].Text := 'Editor ID';
@@ -163,8 +165,8 @@ end;
 
 procedure TForm1.DisplayRecordLeveledListRecords(SelectedPlugin: TPlugin);
 var
-  PluginRecord: IwbRecord;
-  I, Row, Row2 : Integer;
+  PluginRecord: IwbMainRecord;
+  I, Row, Row2, J, numLeveledLists : Integer;
 begin
   for I := 0 to SelectedPlugin._File.RecordCount do
   begin
@@ -175,12 +177,32 @@ begin
     {Begin by sorting out all the armors in the data set}
     if (PluginRecord <> nil) and (PluginRecord.Signature = 'ARMO') then
     begin
-      Logger.Write('DISPLAY', 'ARMOR RECORD TABLE', PluginRecord.BaseName);
+      Logger.Write('DISPLAY', 'ARMOR RECORD TABLE', PluginRecord.DisplayName);
+
+
+
       Row := ArmorGrid.RowCount;
       ArmorGrid.RowCount := Row + 1;
-      ArmorGrid.Cells[0, Row] := PluginRecord.ElementID.ToString();
+      ArmorGrid.Cells[0, Row] := PluginRecord.FormID.ToString();
       ArmorGrid.Cells[1, Row] := PluginRecord.DisplayName;
       ArmorGrid.Cells[2, Row] := PluginRecord.ElementCount.ToString();
+
+      numLeveledLists := 0;
+
+      for J := 0 to Pred(PluginRecord.ReferencedByCount) do
+        begin
+          if(PluginRecord.ReferencedByCount <> 0) then
+          begin
+            if(PluginRecord.ReferencedBy[J].Signature = 'LVLI') then
+              numLeveledLists := numLeveledLists + 1;
+              ArmorGrid.Cells[3 + numLeveledLists, Row] := PluginRecord.ReferencedBy[J].EditorID;
+              Logger.Write('ARMOR LEVELED LIST', 'LEVELED LIST ITEMS', PluginRecord.ReferencedBy[J].EditorID);
+          end;
+        end;
+
+
+
+
       ArmorGrid.Row := Row;
     end;
 
@@ -190,9 +212,8 @@ begin
       Logger.Write('DISPLAY', 'WEAPON RECORD TABLE', PluginRecord.BaseName);
       Row2 := WeaponGrid.RowCount;
       WeaponGrid.RowCount := Row2 + 1;
-      WeaponGrid.Cells[0, Row2] := PluginRecord.ElementID.ToString();
+      WeaponGrid.Cells[0, Row2] := PluginRecord.FormID.ToString();
       WeaponGrid.Cells[1, Row2] := PluginRecord.DisplayName;
-      WeaponGrid.Cells[2, Row2] := PluginRecord.ElementCount.ToString();
       WeaponGrid.Row := Row2;
     end;
 
@@ -275,6 +296,7 @@ begin
   ArmorGrid.Cols[0].Text := 'Editor ID';
   ArmorGrid.Cols[1].Text := 'Display Name';
   ArmorGrid.Cols[2].Text := 'Armor Rating';
+  ArmorGrid.Cols[3].Text := 'Leveled List';
 
   WeaponGrid.Cols[0].Text := 'Editor ID';
   WeaponGrid.Cols[1].Text := 'Display Name';

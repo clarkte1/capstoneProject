@@ -39,46 +39,50 @@ object Form1: TForm1
     Top = 8
     Width = 978
     Height = 665
-    ActivePage = WeaponSheet
+    ActivePage = ArmorSheet
     TabOrder = 2
     OnChange = PageControllerChange
     object ArmorSheet: TTabSheet
       Caption = 'ArmorSheet'
-      ExplicitWidth = 684
-      ExplicitHeight = 406
       object ArmorGrid: TStringGrid
         Left = 14
         Top = 20
-        Width = 670
-        Height = 386
+        Width = 947
+        Height = 613
         FixedCols = 0
         TabOrder = 0
+        ColWidths = (
+          64
+          64
+          118
+          275
+          683)
       end
     end
     object WeaponSheet: TTabSheet
       Caption = 'Weapons'
       ImageIndex = 1
-      ExplicitWidth = 693
-      ExplicitHeight = 417
       object WeaponGrid: TStringGrid
         Left = 3
         Top = 3
         Width = 964
         Height = 630
         TabOrder = 0
+        ColWidths = (
+          64
+          64
+          144
+          353
+          338)
       end
     end
     object SetsSheet: TTabSheet
       Caption = 'Weapon and Armor Sets'
       ImageIndex = 2
-      ExplicitWidth = 684
-      ExplicitHeight = 406
     end
     object StatusPage: TTabSheet
       Caption = 'StatusPage'
       ImageIndex = 3
-      ExplicitWidth = 684
-      ExplicitHeight = 406
       object LogListView: TListView
         Left = 3
         Top = 3

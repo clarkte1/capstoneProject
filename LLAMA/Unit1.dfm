@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 467
-  ClientWidth = 819
+  ClientHeight = 677
+  ClientWidth = 1105
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -29,7 +29,7 @@ object Form1: TForm1
     Left = 8
     Top = 39
     Width = 105
-    Height = 410
+    Height = 630
     ItemHeight = 13
     TabOrder = 1
     OnClick = ListBoxPluginsClick
@@ -37,25 +37,48 @@ object Form1: TForm1
   object PageController: TPageControl
     Left = 119
     Top = 8
-    Width = 692
-    Height = 434
-    ActivePage = ArmorSheet
+    Width = 978
+    Height = 665
+    ActivePage = WeaponSheet
     TabOrder = 2
     OnChange = PageControllerChange
     object ArmorSheet: TTabSheet
       Caption = 'ArmorSheet'
+      ExplicitWidth = 684
+      ExplicitHeight = 406
+      object ArmorGrid: TStringGrid
+        Left = 14
+        Top = 20
+        Width = 670
+        Height = 386
+        FixedCols = 0
+        TabOrder = 0
+      end
     end
     object WeaponSheet: TTabSheet
       Caption = 'Weapons'
       ImageIndex = 1
+      ExplicitWidth = 693
+      ExplicitHeight = 417
+      object WeaponGrid: TStringGrid
+        Left = 3
+        Top = 3
+        Width = 964
+        Height = 630
+        TabOrder = 0
+      end
     end
     object SetsSheet: TTabSheet
       Caption = 'Weapon and Armor Sets'
       ImageIndex = 2
+      ExplicitWidth = 684
+      ExplicitHeight = 406
     end
     object StatusPage: TTabSheet
       Caption = 'StatusPage'
       ImageIndex = 3
+      ExplicitWidth = 684
+      ExplicitHeight = 406
       object LogListView: TListView
         Left = 3
         Top = 3
@@ -73,17 +96,5 @@ object Form1: TForm1
         TabOrder = 1
       end
     end
-  end
-  object DBGirdArmors: TDBGrid
-    Left = 136
-    Top = 39
-    Width = 657
-    Height = 386
-    TabOrder = 3
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
   end
 end

@@ -39,7 +39,8 @@ type
     StatusPage: TTabSheet;
     LogListView: TListView;
     StatusPanelMessage: TPanel;
-    DBGirdArmors: TDBGrid;
+    ArmorGrid: TStringGrid;
+    WeaponGrid: TStringGrid;
     procedure FormCreate(Sender: TObject);
     procedure LoaderStatus(s: string);
     procedure LogMessage(const group, &label, text: string);
@@ -126,12 +127,30 @@ begin
 end;
 
 procedure TForm1.ListBoxPluginsClick(Sender: TObject);
-var plugin : TPlugin;
-var SelectedPlugin: string;
+var
+  plugin : TPlugin;
+  SelectedPlugin: string;
+  I: Integer;
 begin
   if ListBoxPlugins.ItemIndex = -1 then
     Exit;
   SelectedPlugin := ListBoxPlugins.Items[ListBoxPlugins.ItemIndex];
+
+  ArmorGrid.Cols[0].Text := 'Editor ID';
+  ArmorGrid.Cols[1].Text := 'Display Name';
+  ArmorGrid.Cols[2].Text := 'Armor Rating';
+
+  for I := 0 to ArmorGrid.ColCount - 1 do
+    ArmorGrid.Cols[I].Clear;
+  ArmorGrid.RowCount := 1;
+
+  WeaponGrid.Cols[0].Text := 'Editor ID';
+  WeaponGrid.Cols[1].Text := 'Display Name';
+  WeaponGrid.Cols[2].Text := 'Weapon Damage';
+
+  for I := 0 to ArmorGrid.ColCount - 1 do
+    WeaponGrid.Cols[I].Clear;
+  WeaponGrid.RowCount := 1;
 
   for plugin in PluginsList do
     if(plugin._File.Name = SelectedPlugin) then
@@ -144,16 +163,41 @@ end;
 
 procedure TForm1.DisplayRecordLeveledListRecords(SelectedPlugin: TPlugin);
 var
-  LeveledItem: IwbRecord;
-  LeveledItemList: TList;
-  I : Integer;
+  PluginRecord: IwbRecord;
+  I, Row, Row2 : Integer;
 begin
   for I := 0 to SelectedPlugin._File.RecordCount do
   begin
-    LeveledItem := SelectedPlugin._File.Records[i];
-    if (LeveledItem <> nil) and (LeveledItem.Signature = 'LVLI') then
-      Logger.Write(xEditLogGroup, xEditLogLabel, LeveledItem.ElementCount.ToString);
+
+    PluginRecord := SelectedPlugin._File.Records[i];
+
+
+    {Begin by sorting out all the armors in the data set}
+    if (PluginRecord <> nil) and (PluginRecord.Signature = 'ARMO') then
+    begin
+      Logger.Write('DISPLAY', 'ARMOR RECORD TABLE', PluginRecord.BaseName);
+      Row := ArmorGrid.RowCount;
+      ArmorGrid.RowCount := Row + 1;
+      ArmorGrid.Cells[0, Row] := PluginRecord.ElementID.ToString();
+      ArmorGrid.Cells[1, Row] := PluginRecord.DisplayName;
+      ArmorGrid.Cells[2, Row] := PluginRecord.ElementCount.ToString();
+      ArmorGrid.Row := Row;
+    end;
+
+    {Weapons}
+    if (PluginRecord <> nil) and (PluginRecord.Signature = 'WEAP') then
+    begin
+      Logger.Write('DISPLAY', 'WEAPON RECORD TABLE', PluginRecord.BaseName);
+      Row2 := WeaponGrid.RowCount;
+      WeaponGrid.RowCount := Row2 + 1;
+      WeaponGrid.Cells[0, Row2] := PluginRecord.ElementID.ToString();
+      WeaponGrid.Cells[1, Row2] := PluginRecord.DisplayName;
+      WeaponGrid.Cells[2, Row2] := PluginRecord.ElementCount.ToString();
+      WeaponGrid.Row := Row2;
+    end;
+
   end;
+
 end;
 
 procedure TForm1.LoaderStatus(s: string);
@@ -226,6 +270,16 @@ begin
 
   for item in PluginsList do
     ListBoxPlugins.Items.Add(item._File.Name);
+
+
+  ArmorGrid.Cols[0].Text := 'Editor ID';
+  ArmorGrid.Cols[1].Text := 'Display Name';
+  ArmorGrid.Cols[2].Text := 'Armor Rating';
+
+  WeaponGrid.Cols[0].Text := 'Editor ID';
+  WeaponGrid.Cols[1].Text := 'Display Name';
+  WeaponGrid.Cols[2].Text := 'Weapon Damage';
+
 
 end;
 

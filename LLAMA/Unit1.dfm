@@ -49,7 +49,6 @@ object Form1: TForm1
         Top = 20
         Width = 947
         Height = 613
-        FixedCols = 0
         TabOrder = 0
         ColWidths = (
           64

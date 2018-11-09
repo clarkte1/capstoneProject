@@ -139,12 +139,10 @@ begin
   for I := 0 to ArmorGrid.ColCount - 1 do
     ArmorGrid.Cols[I].Clear;
 
-  ArmorGrid.Cols[0].Text := 'Editor ID';
-  ArmorGrid.Cols[1].Text := 'Display Name';
-  ArmorGrid.Cols[2].Text := 'Armor Rating';
-  ArmorGrid.Cols[3].Text := 'HELLO HELLO';
-
-  ArmorGrid.RowCount := 1;
+  ArmorGrid.Cells[0,0] := 'Editor ID';
+  ArmorGrid.Cells[1,0] := 'Display Name';
+  ArmorGrid.Cells[2,0] := 'Armor Rating';
+  ArmorGrid.Cells[3,0] := 'HELLO HELLO';
 
   WeaponGrid.Cols[0].Text := 'Editor ID';
   WeaponGrid.Cols[1].Text := 'Display Name';
@@ -166,10 +164,15 @@ end;
 procedure TForm1.DisplayRecordLeveledListRecords(SelectedPlugin: TPlugin);
 var
   PluginRecord: IwbMainRecord;
-  I, Row, Row2, J, numLeveledLists : Integer;
+  I, Row, Row2, J: Integer;
+  LeveledListsArmor : TStringList;
 begin
+
+  LeveledListsArmor := TStringList.Create();
+
   for I := 0 to SelectedPlugin._File.RecordCount do
   begin
+
 
     PluginRecord := SelectedPlugin._File.Records[i];
 
@@ -187,21 +190,25 @@ begin
       ArmorGrid.Cells[1, Row] := PluginRecord.DisplayName;
       ArmorGrid.Cells[2, Row] := PluginRecord.ElementCount.ToString();
 
-      numLeveledLists := 0;
-
       for J := 0 to Pred(PluginRecord.ReferencedByCount) do
         begin
           if(PluginRecord.ReferencedByCount <> 0) then
           begin
             if(PluginRecord.ReferencedBy[J].Signature = 'LVLI') then
-              numLeveledLists := numLeveledLists + 1;
-              ArmorGrid.Cells[3 + numLeveledLists, Row] := PluginRecord.ReferencedBy[J].EditorID;
-              Logger.Write('ARMOR LEVELED LIST', 'LEVELED LIST ITEMS', PluginRecord.ReferencedBy[J].EditorID);
+            begin
+              if(-1 = LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID)) then
+                begin
+                  LeveledListsArmor.Add(PluginRecord.ReferencedBy[J].EditorID);
+                  if(ArmorGrid.ColCount < LeveledListsArmor.Count - 3) then
+                    ArmorGrid.ColCount := ArmorGrid.ColCount + 1;
+                end;
+
+                ArmorGrid.Cells[3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID), 0] := PluginRecord.ReferencedBy[J].EditorID;
+                ArmorGrid.Cells[3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID), Row] := 'TRUE';
+                Logger.Write('ARMOR LEVELED LIST', 'LEVELED LIST ITEMS', PluginRecord.ReferencedBy[J].EditorID);
+            end;
           end;
         end;
-
-
-
 
       ArmorGrid.Row := Row;
     end;
@@ -218,7 +225,6 @@ begin
     end;
 
   end;
-
 end;
 
 procedure TForm1.LoaderStatus(s: string);
@@ -291,16 +297,6 @@ begin
 
   for item in PluginsList do
     ListBoxPlugins.Items.Add(item._File.Name);
-
-
-  ArmorGrid.Cols[0].Text := 'Editor ID';
-  ArmorGrid.Cols[1].Text := 'Display Name';
-  ArmorGrid.Cols[2].Text := 'Armor Rating';
-  ArmorGrid.Cols[3].Text := 'Leveled List';
-
-  WeaponGrid.Cols[0].Text := 'Editor ID';
-  WeaponGrid.Cols[1].Text := 'Display Name';
-  WeaponGrid.Cols[2].Text := 'Weapon Damage';
 
 
 end;

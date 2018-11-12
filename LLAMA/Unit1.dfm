@@ -75,10 +75,6 @@ object Form1: TForm1
           338)
       end
     end
-    object SetsSheet: TTabSheet
-      Caption = 'Weapon and Armor Sets'
-      ImageIndex = 2
-    end
     object StatusPage: TTabSheet
       Caption = 'StatusPage'
       ImageIndex = 3
@@ -97,6 +93,15 @@ object Form1: TForm1
         Height = 380
         Caption = 'StatusPanelMessage'
         TabOrder = 1
+      end
+      object MasterCheckBox: TCheckBox
+        Left = 16
+        Top = 416
+        Width = 97
+        Height = 17
+        Caption = 'Enable Editing'
+        TabOrder = 2
+        Visible = False
       end
     end
   end

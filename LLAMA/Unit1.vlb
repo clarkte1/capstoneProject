@@ -10,15 +10,12 @@ Coordinates=10,197,70,33
 [PageController]
 Coordinates=404,10,88,33
 
-[SetsSheet]
-Coordinates=330,10,64,33
-
 [LogListView]
 Coordinates=10,10,97,177
 Visible=True
 
 []
-Coordinates=211,10,46,51
+Coordinates=330,10,64,33
 
 [ListBoxPlugins]
 Coordinates=117,10,84,105

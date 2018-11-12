@@ -35,12 +35,12 @@ type
     PageController: TPageControl;
     ArmorSheet: TTabSheet;
     WeaponSheet: TTabSheet;
-    SetsSheet: TTabSheet;
     StatusPage: TTabSheet;
     LogListView: TListView;
     StatusPanelMessage: TPanel;
     ArmorGrid: TStringGrid;
     WeaponGrid: TStringGrid;
+    MasterCheckBox: TCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure LoaderStatus(s: string);
     procedure LogMessage(const group, &label, text: string);
@@ -54,6 +54,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ListBoxPluginsClick(Sender: TObject);
     procedure DisplayRecordLeveledListRecords(SelectedPlugin: TPlugin);
+    procedure set_checkbox_alignment;
   private
     { Private declarations }
   public
@@ -166,6 +167,7 @@ var
   PluginRecord: IwbMainRecord;
   I, Row, Row2, J: Integer;
   LeveledListsArmor : TStringList;
+  NewCheckbox : TCheckbox;
 begin
 
   LeveledListsArmor := TStringList.Create();
@@ -204,7 +206,19 @@ begin
                 end;
 
                 ArmorGrid.Cells[3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID), 0] := PluginRecord.ReferencedBy[J].EditorID;
-                ArmorGrid.Cells[3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID), Row] := 'TRUE';
+
+                NewCheckbox := TCheckbox.Create(Application);
+                NewCheckBox.Width := 0;
+                NewCheckBox.Visible := false;
+                NewCheckBox.Caption := 'OK';
+                NewCheckBox.Color := clWindow;
+                NewCheckBox.Tag := J;
+                NewCheckBox.OnClick := MasterCheckBox.OnClick; // Assign a previus OnClick event in an existing TCheckBox
+                NewCheckBox.Parent := ArmorSheet;
+                ArmorGrid.Objects[3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID), Row] := NewCheckbox;
+
+
+
                 Logger.Write('ARMOR LEVELED LIST', 'LEVELED LIST ITEMS', PluginRecord.ReferencedBy[J].EditorID);
             end;
           end;
@@ -212,6 +226,8 @@ begin
 
       ArmorGrid.Row := Row;
     end;
+
+    set_checkbox_alignment;
 
     {Weapons}
     if (PluginRecord <> nil) and (PluginRecord.Signature = 'WEAP') then
@@ -225,6 +241,30 @@ begin
     end;
 
   end;
+end;
+
+Procedure TForm1.set_checkbox_alignment;
+var
+NewCheckBox: TCheckBox;
+Rect: TRect;
+i, j: Integer;
+  begin
+  for i := 1 to ArmorGrid.RowCount do
+    begin
+    for j := 1 to ArmorGrid.ColCount do
+    begin
+      NewCheckBox := (ArmorGrid.Objects[j,i] as TCheckBox);
+      if NewCheckBox <> nil then
+        begin
+        Rect := ArmorGrid.CellRect(4,i); // here, we get the cell rect for our contol...
+        NewCheckBox.Left := ArmorGrid.Left + Rect.Left+2;
+        NewCheckBox.Top := ArmorGrid.Top + Rect.Top+2;
+        NewCheckBox.Width := Rect.Right - Rect.Left;
+        NewCheckBox.Height := Rect.Bottom - Rect.Top;
+        NewCheckBox.Visible := True;
+        end;
+      end;
+    end;
 end;
 
 procedure TForm1.LoaderStatus(s: string);

@@ -49,13 +49,12 @@ object Form1: TForm1
         Top = 20
         Width = 947
         Height = 613
+        ColCount = 3
         TabOrder = 0
         ColWidths = (
           64
           64
-          118
-          275
-          683)
+          118)
       end
     end
     object WeaponSheet: TTabSheet

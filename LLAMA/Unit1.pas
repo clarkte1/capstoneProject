@@ -165,7 +165,7 @@ end;
 procedure TForm1.DisplayRecordLeveledListRecords(SelectedPlugin: TPlugin);
 var
   PluginRecord: IwbMainRecord;
-  I, Row, Row2, J: Integer;
+  I, Row, Row2, J, k, l: Integer;
   LeveledListsArmor : TStringList;
   NewCheckbox : TCheckbox;
 begin
@@ -198,24 +198,34 @@ begin
           begin
             if(PluginRecord.ReferencedBy[J].Signature = 'LVLI') then
             begin
+
+
               if(-1 = LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID)) then
                 begin
                   LeveledListsArmor.Add(PluginRecord.ReferencedBy[J].EditorID);
                   if(ArmorGrid.ColCount < LeveledListsArmor.Count - 3) then
                     ArmorGrid.ColCount := ArmorGrid.ColCount + 1;
+                    ArmorGrid.Cells[3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID), Row] := '!';
                 end;
 
-                ArmorGrid.Cells[3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID), 0] := PluginRecord.ReferencedBy[J].EditorID;
-
-                NewCheckbox := TCheckbox.Create(Application);
-                NewCheckBox.Width := 0;
-                NewCheckBox.Visible := false;
-                NewCheckBox.Caption := 'OK';
-                NewCheckBox.Color := clWindow;
-                NewCheckBox.Tag := J;
-                NewCheckBox.OnClick := MasterCheckBox.OnClick; // Assign a previus OnClick event in an existing TCheckBox
-                NewCheckBox.Parent := ArmorSheet;
-                ArmorGrid.Objects[3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID), Row] := NewCheckbox;
+                k := 3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID);
+                ArmorGrid.Cells[k, 0] := PluginRecord.ReferencedBy[J].EditorID;
+//                NewCheckbox := TCheckbox.Create(Application);
+//                NewCheckBox.Width := 0;
+////                NewCheckBox.Visible := false;
+//                NewCheckBox.Caption := 'OK';
+//                NewCheckBox.Color := clWindow;
+//                NewCheckBox.Tag := J;
+//                NewCheckBox.OnClick := MasterCheckBox.OnClick; // Assign a previus OnClick event in an existing TCheckBox
+//                NewCheckBox.Parent := ArmorSheet;
+//                NewCheckBox.Checked := TRUE;
+//                Rect := ArmorGrid.CellRect(k, Row); // here, we get the cell rect for our contol...
+//                NewCheckBox.Left := ArmorGrid.Left + Rect.Left+2;
+//                NewCheckBox.Top := ArmorGrid.Top + Rect.Top+2;
+//                NewCheckBox.Width := Rect.Right - Rect.Left;
+//                NewCheckBox.Height := Rect.Bottom - Rect.Top;
+//                NewCheckBox.Visible := True;
+//                ArmorGrid.Objects[3 + LeveledListsArmor.IndexOf(PluginRecord.ReferencedBy[J].EditorID), Row] := NewCheckbox;
 
 
 
@@ -226,8 +236,6 @@ begin
 
       ArmorGrid.Row := Row;
     end;
-
-    set_checkbox_alignment;
 
     {Weapons}
     if (PluginRecord <> nil) and (PluginRecord.Signature = 'WEAP') then
@@ -251,12 +259,12 @@ i, j: Integer;
   begin
   for i := 1 to ArmorGrid.RowCount do
     begin
-    for j := 1 to ArmorGrid.ColCount do
+    for j := 3 to ArmorGrid.ColCount do
     begin
       NewCheckBox := (ArmorGrid.Objects[j,i] as TCheckBox);
       if NewCheckBox <> nil then
         begin
-        Rect := ArmorGrid.CellRect(4,i); // here, we get the cell rect for our contol...
+        Rect := ArmorGrid.CellRect(j,i); // here, we get the cell rect for our contol...
         NewCheckBox.Left := ArmorGrid.Left + Rect.Left+2;
         NewCheckBox.Top := ArmorGrid.Top + Rect.Top+2;
         NewCheckBox.Width := Rect.Right - Rect.Left;

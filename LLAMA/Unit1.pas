@@ -38,9 +38,11 @@ type
     StatusPage: TTabSheet;
     LogListView: TListView;
     StatusPanelMessage: TPanel;
-    ArmorGrid: TStringGrid;
     WeaponGrid: TStringGrid;
     MasterCheckBox: TCheckBox;
+    ListBox1: TListBox;
+    ArmorSearchBar: TEdit;
+    SearchBarArmorText: TStaticText;
     procedure FormCreate(Sender: TObject);
     procedure LoaderStatus(s: string);
     procedure LogMessage(const group, &label, text: string);
@@ -55,6 +57,7 @@ type
     procedure ListBoxPluginsClick(Sender: TObject);
     procedure DisplayRecordLeveledListRecords(SelectedPlugin: TPlugin);
     procedure set_checkbox_alignment;
+    procedure SearchBarArmorTextClick(Sender: TObject);
   private
     { Private declarations }
   public

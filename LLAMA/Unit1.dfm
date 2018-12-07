@@ -44,18 +44,7 @@ object Form1: TForm1
     OnChange = PageControllerChange
     object ArmorSheet: TTabSheet
       Caption = 'ArmorSheet'
-      object ArmorGrid: TStringGrid
-        Left = 14
-        Top = 20
-        Width = 947
-        Height = 613
-        ColCount = 3
-        TabOrder = 0
-        ColWidths = (
-          64
-          64
-          118)
-      end
+      ExplicitLeft = 0
     end
     object WeaponSheet: TTabSheet
       Caption = 'Weapons'
@@ -103,5 +92,29 @@ object Form1: TForm1
         Visible = False
       end
     end
+  end
+  object ListBox1: TListBox
+    Left = 136
+    Top = 72
+    Width = 257
+    Height = 577
+    ItemHeight = 13
+    TabOrder = 3
+  end
+  object ArmorSearchBar: TEdit
+    Left = 216
+    Top = 45
+    Width = 177
+    Height = 21
+    TabOrder = 4
+  end
+  object SearchBarArmorText: TStaticText
+    Left = 136
+    Top = 45
+    Width = 74
+    Height = 17
+    Caption = 'Search'
+    TabOrder = 5
+    OnClick = SearchBarArmorTextClick
   end
 end
